@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Recommendations Page</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f0;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5em 1em;
+            margin: 0 1em;
+        }
+
+        section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 2em;
+        }
+
+        .model-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1em;
+            margin: 1em;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 45%;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Crop Recommendations Page</h1>
+    </header>
+
+    <nav>
+        <a href="dashboard.html">Home</a>
+        <a href="chatbot_page.html">ChatBot API</a>
+        <a href="disease_detection_page.html">Disease Detection</a>
+        <a href="fertigation_page.html">Fertigation</a>
+        <a href="field_management_page.html">Field Management</a>
+        <a href="crop_recommendations_page.html">Crop Recommendations</a>
+    </nav>
+
+    <section>
+        <div class="model-card">
+            <h3>Personalized Recommendations</h3>
+            <p>Receive recommendations for the best crops to plant</p>
+        </div>
+        <div class="model-card">
+            <h3>Seasonal Planting</h3>
+            <p>Optimize planting based on seasonal variations</p>
+        </div>
+        <div class="model-card">
+            <h3>Climate Adaptability</h3>
+            <p>Choose crops that are adaptable to your local climate</p>
+        </div>
+        <div class="model-card">
+            <h3>Market Trends</h3>
+            <p>Stay informed about market trends for crop selection</p>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2023 CropCraft. All rights reserved.
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Potato Information Page</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f0;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5em 1em;
+            margin: 0 1em;
+        }
+
+        section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 2em;
+        }
+
+        .model-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1em;
+            margin: 1em;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1em;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        /* Additional styles for the back button */
+        .back-button {
+            margin-top: 1em;
+        }
+
+        .back-button button {
+            padding: 0.5em 1em;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Potato Information Page</h1>
+    </header>
+
+    <nav>
+        <a href="dashboard.html">Home</a>
+        <a href="chatbot_page.html">ChatBot API</a>
+        <a href="disease_detection_page.html">Disease Detection</a>
+        <a href="fertigation_page.html">Fertigation</a>
+        <a href="field_management_page.html">Field Management</a>
+        <a href="crop_recommendations_page.html">Crop Recommendations</a>
+    </nav>
+
+    <section>
+        <div class="model-card">
+            <h3>Pesticides for Potato</h3>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Season</th>
+                        <th>Months</th>
+                        <th>Pesticides</th>
+                        <th>Image</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Spring</td>
+                        <td>April - June</td>
+                        <td>Example Pesticide A</td>
+                        <td><img src="pesticide_imageA.jpg" alt="Pesticide A"></td>
+                    </tr>
+                    <tr>
+                        <td>Summer</td>
+                        <td>July - September</td>
+                        <td>Example Pesticide B</td>
+                        <td><img src="pesticide_imageB.jpg" alt="Pesticide B"></td>
+                    </tr>
+                    <!-- Add more rows as needed -->
+                </tbody>
+            </table>
+
+            <!-- Back button -->
+            <div class="back-button">
+                <button onclick="goBack()">Back</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2023 Potato Information Page. All rights reserved.
+    </footer>
+
+    <script>
+        // JavaScript function to go back to the previous page
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Detection Page</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f0;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5em 1em;
+            margin: 0 1em;
+        }
+
+        section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 2em;
+        }
+
+        .model-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1em;
+            margin: 1em;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 45%;
+        }
+
+        /* Additional styles for the dropdown and button */
+        .crop-dropdown {
+            margin-top: 1em;
+        }
+
+        .crop-dropdown label {
+            display: block;
+            margin-bottom: 0.5em;
+        }
+
+        .crop-dropdown select {
+            width: 100%;
+            padding: 0.5em;
+        }
+
+        .submit-button {
+            margin-top: 1em;
+        }
+
+        .submit-button button {
+            padding: 0.5em 1em;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Disease Detection Page</h1>
+    </header>
+
+    <nav>
+        <a href="dashboard.html">Home</a>
+        <a href="chatbot_page.html">ChatBot API</a>
+        <a href="disease_detection_page.html">Disease Detection</a>
+        <a href="fertigation_page.html">Fertigation</a>
+        <a href="field_management_page.html">Field Management</a>
+        <a href="crop_recommendations_page.html">Crop Recommendations</a>
+    </nav>
+
+    <section>
+        <div class="model-card">
+            <h3>Pesticides</h3>
+            <p>Information about leaf health detection</p>
+
+            <!-- Dropdown list for crops -->
+            <div class="crop-dropdown">
+                <label for="crop-select">Select Crop:</label>
+                <select id="crop-select">
+                    <option value="tomato">Tomato</option>
+                    <option value="potato">Potato</option>
+                    <option value="rice">Rice</option>
+                </select>
+            </div>
+
+            <!-- Submit button -->
+            <div class="submit-button">
+                <button onclick="navigateToSelectedPage()">Submit</button>
+            </div>
+        </div>
+
+        <!-- Other model cards remain unchanged -->
+
+    </section>
+
+    <footer>
+        &copy; 2023 CropCraft. All rights reserved.
+    </footer>
+
+    <script>
+        // JavaScript function to handle navigation based on the selected crop
+        function navigateToSelectedPage() {
+            var selectedCrop = document.getElementById('crop-select').value;
+            var destinationPage = '';
+
+            // Determine the destination page based on the selected crop
+            switch (selectedCrop) {
+                case 'tomato':
+                    destinationPage = 'tomato_page.html';
+                    break;
+                case 'potato':
+                    destinationPage = 'potato_page.html';
+                    break;
+                case 'rice':
+                    destinationPage = 'rice_page.html';
+                    break;
+                default:
+                    // Default to a general page if no specific crop is selected
+                    destinationPage = 'general_page.html';
+            }
+
+            // Navigate to the selected page
+            window.location.href = destinationPage;
+        }
+    </script>
+
+</body>
+</html>

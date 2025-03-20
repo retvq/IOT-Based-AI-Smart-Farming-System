@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fertigation Page</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f0;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5em 1em;
+            margin: 0 1em;
+        }
+
+        section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 2em;
+        }
+
+        .model-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1em;
+            margin: 1em;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 45%;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+    </style>
+    <script src="https://www.arduino.cc/static/libraries/arduino-iot-client/arduino-iot-client-latest.js"></script>
+</head>
+<body>
+
+    <header>
+        <h1>Fertigation Page</h1>
+    </header>
+
+    <nav>
+        <a href="dashboard.html">Home</a>
+        <a href="chatbot_page.html">ChatBot API</a>
+        <a href="disease_detection_page.html">Disease Detection</a>
+        <a href="fertigation_page.html">Fertigation</a>
+        <a href="field_management_page.html">Field Management</a>
+        <a href="crop_recommendations_page.html">Crop Recommendations</a>
+    </nav>
+
+    <section>
+        <div class="model-card">
+            <h3>Nutrient Levels in Soil</h3>
+            <p>Measure and analyze nutrient levels in the soil</p>
+        </div>
+        <div class="model-card">
+            <h3>Fertilizer Recommendation</h3>
+            <p>Receive personalized recommendations for fertilizer usage</p>
+        </div>
+        <div class="model-card">
+            <h3>Water + Fertilizer Integration</h3>
+            <p>Optimize the integration of water and fertilizer for crops</p>
+        </div>
+        <div class="model-card">
+            <h3>Environmental Impact</h3>
+            <p>Understand and minimize the environmental impact of fertilization</p>
+        </div>
+    </section>
+    <script>
+    // Create a new Arduino IoT client
+    const iotClient = new ArduinoIoTClient();
+
+    // Set your device ID and token
+    const deviceId = '';
+    const deviceToken = 'YOUR_DEVICE_TOKEN';
+
+    // Connect to the Arduino IoT cloud
+    iotClient.begin(deviceId, deviceToken);
+
+    // Subscribe to a property (replace 'property_name' with your actual property name)
+    iotClient.subscribe('property_name', (value) => {
+        // Handle property value changes
+        console.log('Property value changed:', value);
+        // Update your HTML content or perform other actions based on the property value
+    });
+
+    // Update a property (replace 'property_name' and 'new_value' with your actual property name and value)
+    function updateProperty() {
+        const propertyName = 'property_name';
+        const newValue = 'new_value';
+        iotClient.setProperty(propertyName, newValue);
+    }
+
+    // Call this function to disconnect from the Arduino IoT cloud when needed
+    function disconnectFromIoT() {
+        iotClient.end();
+    }
+</script>
+
+
+    <footer>
+        &copy; 2023 CropCraft. All rights reserved.
+    </footer>
+</body>
+</html>
